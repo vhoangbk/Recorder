@@ -1,0 +1,6 @@
+recorder_android/Recorder/bin/*
+recorder_android/Recorder/gen/*
+*.class
+recorder_android/Recorder/.settings/org.eclipse.jdt.core.prefs
+recorder_android/Recorder/.classpath
+recorder_android/Recorder/project.properties
