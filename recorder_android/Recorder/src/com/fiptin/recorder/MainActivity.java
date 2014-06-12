@@ -257,7 +257,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	@SuppressLint("NewApi")
 	private void initRecorder() {
 		try {
-			String path = Environment.getExternalStorageDirectory() + "/test";
+			String path = Environment.getExternalStorageDirectory() + "/record";
 			File dir = new File(path);
 			if (!dir.exists()) {
 				dir.mkdirs();
@@ -275,7 +275,7 @@ public class MainActivity extends Activity implements OnClickListener,
 
 			// Step 3: Set a CamcorderProfile (requires API Level 8 or higher)
 			videoRecorder.setProfile(CamcorderProfile
-					.get(CamcorderProfile.QUALITY_HIGH));
+					.get(CamcorderProfile.QUALITY_480P));
 
 			// Step 4: Set output file
 			videoRecorder.setOutputFile(videoFile.getAbsolutePath());
@@ -363,17 +363,5 @@ public class MainActivity extends Activity implements OnClickListener,
 		 */
 	}
 	
-	Handler handler = new Handler(){
-		@Override
-		public void handleMessage(Message msg) {
-			super.handleMessage(msg);
-			progressBar.setProgress(msg.what);
-		}
-	};
 	
-	@Override
-	protected void onDestroy() {
-		super.onDestroy();
-		releaseMediaRecorder();
-	}
 }
